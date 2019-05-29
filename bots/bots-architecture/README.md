@@ -12,7 +12,7 @@ Bot host runs external to the Rocket.Chat host and consists of SDK, [adapter](#f
 [framework](#bot-framework) and, typically, external [services](#external-services).
 
 A bot, being subscribed to room's messages (all or specific ones) handles these
-messages and responds back to the user. Typical bot carries out interactive conversations
+messages and responds back to the user. Typically a bot carries out interactive conversations
 with users. The conversational model can be designed and managed by tooling
 and framworks on the bot host.
 
@@ -36,7 +36,7 @@ the future potential of user-activated bots.
 ## Bots Host
 
 A bot host is a machine where bots run.  It can be a baremetal
-machine, a network cluster, virtualized environments or cloud based.
+machine, a network cluster, a virtualized environment or cloud based.
 
 The bot host typically manages connections to #external_services to
 extend a bots' ability to access and manipulate external data and
@@ -45,7 +45,7 @@ systems.
 A bot host can manage and run many different bots, as well as many 
 instances of any bot.
 
-Bot are typically created using bot framework or platforms in popular
+Bot are typically created using a bot framework or platforms in popular
 programming language such as NodeJS and Python.
 
 ## Message Streams
@@ -61,27 +61,27 @@ The SDK is a low-level software module that offers an interface for external
 code to subscribe to message streams, send messages and call methods on the
 Rocket.Chat server (via WebSockets / DDP).
 
-Bot framework adapter are written using the SDK.
+Bot framework adapters are written using the SDK.
 
 ## Framework Adapter
 
-Adapter (also referred as **connector** or **middleware**) is a software component
+An adapter (also referred as **connector** or **middleware**) is a software component
 written to a bot's framework's specification to link the framework with Rocket.Chat.
 
 An adapter allows bot creators to design and build bot interactions in the 
 framework's terms and according to its model, without detailed knowledge and consideration 
 for the low level programming details of communicating with Rocket.Chat.
 
-Adapter always communicate with Rocket.Chat via Rocket.Chat SDK.
+Adapters always communicate with Rocket.Chat via Rocket.Chat SDK.
 
 ## Bot Framework
 
-Bot framework (such as Hubot, Botkit, Rasa or Botpress) provides unique
-approaches to compose conversational interfaces. They allow developer
+Bot frameworks (such as Hubot, Botkit, Rasa or Botpress) provide unique
+approaches to compose conversational interfaces. They allow the developer
 to focus on the design and management of complex bot logic.
 
 Some frameworks are SaaS (Software as a Service) and run in the cloud. Most
-framworks you can run on your own bot host.
+frameworks can be run on your own bot host.
 
 Rocket.Chat's community has created adapters for most of the popular bot frameworks.
 
@@ -89,9 +89,9 @@ Rocket.Chat's community has created adapters for most of the popular bot framewo
 
 In production, hundreds or thousands of users can be carrying out conversations with a bot
 at the same time. The ability to scale a bot from one conversation to many concurrent ones
-is essential.  Otherwise, it fails. 
+is essential. 
 
-Bot frameworks/platforms support varying degree of scalability.  To ensure
+Bot frameworks/platforms support varying degrees of scalability.  To ensure
 that growing amount of users will not cause architectural and performance problems, you
 should choose your bot's framework wisely. You should consider potential scalability issues even
 before you start implementing your bot's logic
@@ -102,6 +102,7 @@ The value of most production bot relies on its ability to access and manipulate 
 data and systems.  A bot calls external services (databases, scheduling systems, CRM, NLP, and so on)
 to provide data or conversational processing.
 
-A good bot framework typically ease the linkage and facilitate bot access to these systems in a manner consistent
-with the framework's design, through the bot host.
+A good bot framework typically eases the linkage and facilitates bot access to these systems in a manner consistent with the framework's design, through the bot host.
+
+
 
